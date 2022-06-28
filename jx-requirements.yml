@@ -20,7 +20,7 @@ spec:
   - key: staging
   - key: production
   ingress:
-    domain: ""
+    domain: "kubernetes.docker.internal"
     externalDNS: false
     namespaceSubDomain: -jx.
     tls:
