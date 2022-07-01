@@ -6,6 +6,10 @@ data:
       repos:
       - lmmc/jx3-demo
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - lmmc/jenkins-pipeline-test
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      lmmc/jenkins-pipeline-test:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       lmmc/jx3-demo:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -26,6 +35,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      lmmc/jenkins-pipeline-test:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       lmmc/jx3-demo:
       - config-updater
       - approve
@@ -55,6 +80,11 @@ data:
     - repos:
       - lmmc/jx3-demo
       trusted_org: todo
+    - repos:
+      - lmmc/jenkins-pipeline-test
+      trusted_org: todo
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
