@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: lmmc
+    provider: github
+    repository: jx-pipeline-test-1
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: lmmc-jx-pipeline-test-1
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/lmmc/jx-pipeline-test-1.git
+  org: lmmc
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx-pipeline-test-1
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/lmmc/jx-pipeline-test-1
