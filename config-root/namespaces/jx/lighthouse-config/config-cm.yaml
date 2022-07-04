@@ -8,6 +8,7 @@ data:
     in_repo_config:
       enabled:
         lmmc/jenkins-pipeline-test: true
+        lmmc/jx-pipeline-test-1: true
         lmmc/jx3-demo: true
     plank: {}
     pod_namespace: jx
@@ -21,6 +22,7 @@ data:
         skip-unknown-contexts: false
       merge_method:
         lmmc/jenkins-pipeline-test: merge
+        lmmc/jx-pipeline-test-1: merge
         lmmc/jx3-demo: merge
       queries:
       - labels:
@@ -34,6 +36,7 @@ data:
         repos:
         - lmmc/jx3-demo
         - lmmc/jenkins-pipeline-test
+        - lmmc/jx-pipeline-test-1
       - labels:
         - updatebot
         missingLabels:
@@ -45,6 +48,7 @@ data:
         repos:
         - lmmc/jx3-demo
         - lmmc/jenkins-pipeline-test
+        - lmmc/jx-pipeline-test-1
       target_url: http://lighthouse-jx.127.0.0.1/merge/status
 kind: ConfigMap
 metadata:
